@@ -1,0 +1,92 @@
+1. Adjon meg egy utasítást C# nyelven, amely kiírja a képernyőre a g nevű, 5 pont int típusú változó értékét!
+
+  int egész;
+  double valós;
+  string szöveg;
+  Console.Write("Az egész változó értéke: ");
+  egész = Convert.ToInt32(Console.ReadLine());    // a beolvasott adatot 32 bites egésszé konvertáljuk
+  Console.Write("A valós változó értéke: ");
+  valós = Convert.ToDouble(Console.ReadLine());  // dupla pontosságú valós számmá konvertáljuk a beolvasott adatot 
+  Console.Write("A szöveg változó értéke: ");
+  szöveg = Console.ReadLine();
+  
+2. Adjon meg egy C# nyelvű kifejezést, amely bekér egy számadatot a billentyűzetről az X egész típusú változóba!
+
+  double[] valós5 = new double[5];
+  string[] darabok = new string[5];
+  string sor; 
+  char[] elválasztó =new char[]{' '};
+  Console.WriteLine("Írj 5 valós számot egymás után egy szóközzel elválasztva!");
+  sor = Console.ReadLine();
+  darabok = sor.Split(elválasztó);
+  for (int i = 0; i < 5; i++)
+  {
+    valós5[i] = Convert.ToDouble(darabok[i]);
+    Console.WriteLine(valós5[i]);
+  }
+  
+3. Adjon meg egy olyan C# nyelvű utasítást, amely definiál egy szam nevű, egész típusú 10 elemből álló tömböt!
+
+class ArrayTest
+{
+    static void Main()
+    {
+        // Declare the array of two elements.
+        int[][] arr = new int[2][];
+
+        // Initialize the elements.
+        arr[0] = new int[5] { 1, 3, 5, 7, 9 };
+        arr[1] = new int[4] { 2, 4, 6, 8 };
+
+        // Display the array elements.
+        for (int i = 0; i < arr.Length; i++)
+        {
+            System.Console.Write("Element({0}): ", i);
+
+            for (int j = 0; j < arr[i].Length; j++)
+            {
+                System.Console.Write("{0}{1}", arr[i][j], j == (arr[i].Length - 1) ? "" : " ");
+            }
+            System.Console.WriteLine();
+        }
+        // Keep the console window open in debug mode.
+        System.Console.WriteLine("Press any key to exit.");
+        System.Console.ReadKey();
+    }
+}
+/* Output:
+    Element(0): 1 3 5 7 9
+    Element(1): 2 4 6 8
+*/
+
+4. Hányszor fut le az alábbi ciklus?
+int i=0;
+while (i<4)
+i++;
+
+4 TIMES
+
+5. Mi lesz az a változó értéke?
+static void triplaz(int x)
+{
+x=3*x;
+}
+static void Main(string[] args)
+{
+int a =10;
+triplaz(a);
+Console.WriteLine(a);
+}
+
+6. Hogyan lehet egy fájlból adatokat beolvasni C#-ban. Írjon egy példát. A fájl neve proba.txt.
+class ReadFromFile
+{
+    static void Main()
+    {
+     // Example #1
+     // Read the file as one string.
+     string text = System.IO.File.ReadAllText(@"C:\Users\Public\TestFolder\WriteText.txt");
+     // Display the file contents to the console. Variable text is a string.
+     System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
+     }
+}
